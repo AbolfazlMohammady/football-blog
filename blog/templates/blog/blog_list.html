@@ -1,0 +1,58 @@
+{% extends '_base.html' %}
+{% load static %}
+{% block content %}
+   <div class="inner-page-banner">
+      <div class="container"></div>
+   </div>
+   <div class="inner-information-text text-center">
+      <div class="container">
+         <h3 class="fw-bold">Blog</h3>
+         <ul class="breadcrumb d-inline-block">
+            <li><a href="{% url 'home' %}" class="text-decoration-none">Home</a></li>
+            <li class="active">Blog</li>
+         </ul>
+      </div>
+   </div>
+   
+   <section id="contant" class="contant main-heading team">
+      <div class="container d-flex flex-column align-items-center">
+         <div class="row justify-content-center w-100">
+            <div class="col-lg-8 col-md-10 d-flex flex-column align-items-center">
+               {% for blog in blogs %}
+                  <div class="card shadow border rounded p-3 mb-4 text-center" style="max-width: 750px; width: 100%;">
+                     <img src="{{ blog.image.url }}" class="card-img-top img-fluid" style="max-height: 250px; object-fit: cover; border-radius: 10px;" alt="{{ blog.title }}" />
+                     <div class="card-body">
+                        <div class="post-people d-flex align-items-center justify-content-center mb-3">
+                           <img src="{% static 'images/profile-img.png' %}" class="rounded-circle me-2" style="width: 50px; height: 50px;" alt="{{ blog.author.username }}" />
+                           <span>
+                              <h5 class="mb-0 fw-bold">{{ blog.author.username }}</h5>
+                              <small class="text-muted">on {{ blog.created_at|date:"M d, Y" }}</small>
+                           </span>
+                        </div>
+                        <h3 class="mt-3">{{ blog.title }}</h3>
+                        <p class="text-muted">{{ blog.content|slice:":200" }}...</p>
+                        <a class="btn btn-primary rounded-pill px-4" href="{% url 'blog_detail' blog.pk %}">Read More</a>
+                     </div>
+                  </div>
+               {% endfor %}
+               
+               <!-- Pagination -->
+               <div class="pagination text-center mt-4">
+                  {% if page_obj.has_previous %}
+                     <a class="btn btn-outline-primary rounded-pill" href="?page=1">&laquo; اول</a>
+                     <a class="btn btn-outline-primary rounded-pill" href="?page={{ page_obj.previous_page_number }}">قبلی</a>
+                  {% endif %}
+                  
+                  <span class="mx-3">صفحه {{ page_obj.number }} از {{ page_obj.paginator.num_pages }}</span>
+                  
+                  {% if page_obj.has_next %}
+                     <a class="btn btn-outline-primary rounded-pill" href="?page={{ page_obj.next_page_number }}">بعدی</a>
+                     <a class="btn btn-outline-primary rounded-pill" href="?page={{ page_obj.paginator.num_pages }}">آخر &raquo;</a>
+                  {% endif %}
+               </div>
+               
+            </div>
+         </div>
+      </div>
+   </section>
+{% endblock %}
