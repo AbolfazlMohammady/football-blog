@@ -1,0 +1,115 @@
+{% extends '_base.html' %}
+{% load static %}
+{% block content %}
+   
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+   
+         <div class="inner-page-banner">
+            <div class="container">
+            </div>
+         </div>
+      </section>
+      <section id="contant" class="contant main-heading" style="padding-bottom:0;margin-bottom:-1px;position:relative;z-index:1;">
+         <div class="aboutus">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                     <div class="col-md-7 col-sm-7 col-xs-12">
+                        <div class="full">
+                           <h3>تاریخچه لیگ ورزشی</h3>
+                           <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                              چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است.
+                           </p>
+                           <ul class="icon-list">
+                              <li><i class="fa fa-angle-right"></i> ارائه بهترین امکانات ورزشی</li>
+                              <li><i class="fa fa-angle-right"></i> تاریخچه‌ای طولانی و افتخارآمیز</li>
+                              <li><i class="fa fa-angle-right"></i> حمایت از ورزشکاران جوان</li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-5 col-sm-5 col-xs-12">
+                        <img class="img-responsive" src="{% static 'images/img-07.jpg' %}" alt="تصویر تاریخچه لیگ" />
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="dark-section" style="background:url(images/walle.jpg)">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                     <div class="heading-main">
+                        <h2>نظرات کاربران</h2>
+                     </div>
+                     <div class="testimonial-slider">
+                        <div class="carousel slide" data-ride="carousel" id="quote-carousel">
+                           <!-- نقل‌قول‌ها -->
+                           <div class="carousel-inner text-center">
+                              <!-- نقل‌قول ۱ -->
+                              <div class="item active">
+                                 <blockquote>
+                                    <div class="row">
+                                       <div class="col-sm-10 col-sm-offset-1">
+                                          <p>این لیگ ورزشی فوق‌العاده است! تجربه‌ای عالی و حرفه‌ای برای تمام علاقه‌مندان به ورزش فراهم کرده است.</p>
+                                          <small>محمد رضایی</small>
+                                       </div>
+                                    </div>
+                                 </blockquote>
+                              </div>
+                              <!-- نقل‌قول ۲ -->
+                              <div class="item">
+                                 <blockquote>
+                                    <div class="row">
+                                       <div class="col-sm-10 col-sm-offset-1">
+                                          <p>یکی از بهترین رویدادهای ورزشی که تا به حال دیده‌ام. برنامه‌ریزی دقیق و محیطی دوستانه برای همه.</p>
+                                          <small>سارا احمدی</small>
+                                       </div>
+                                    </div>
+                                 </blockquote>
+                              </div>
+                              <!-- نقل‌قول ۳ -->
+                              <div class="item">
+                                 <blockquote>
+                                    <div class="row">
+                                       <div class="col-sm-10 col-sm-offset-1">
+                                          <p>شرکت در این لیگ تجربه‌ای بی‌نظیر بود. همه چیز حرفه‌ای و استاندارد بود.</p>
+                                          <small>علی موسوی</small>
+                                       </div>
+                                    </div>
+                                 </blockquote>
+                              </div>
+                           </div>
+                           <!-- نشانگرهای کاروسل -->
+                           <ol class="carousel-indicators">
+                              <li data-target="#quote-carousel" data-slide-to="0" class="active">
+                                 <img class="img-responsive" src="https://s3.amazonaws.com/uifaces/faces/twitter/mantia/128.jpg" alt="محمد رضایی">
+                              </li>
+                              <li data-target="#quote-carousel" data-slide-to="1">
+                                 <img class="img-responsive" src="https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg" alt="سارا احمدی">
+                              </li>
+                              <li data-target="#quote-carousel" data-slide-to="2">
+                                 <img class="img-responsive" src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="علی موسوی">
+                              </li>
+                           </ol>
+                           <!-- دکمه‌های کنترلی کاروسل -->
+                           <a class="carousel-control-prev" href="#quote-carousel" role="button" data-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="sr-only">قبلی</span>
+                          </a>
+                          <a class="carousel-control-next" href="#quote-carousel" role="button" data-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="sr-only">بعدی</span>
+                          </a>
+                          
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      
+      {% endblock %}
